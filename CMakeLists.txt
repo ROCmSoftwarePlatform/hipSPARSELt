@@ -137,6 +137,10 @@ else()
       )
     endif()
 
+    if(AMDGPU_TARGETS AND NOT GPU_TARGETS)
+      message( DEPRECATION "AMDGPU_TARGETS use is deprecated. Use GPU_TARGETS." )
+    endif()
+
     if (AMDGPU_TARGETS)
         set(TMPAMDGPU_TARGETS "${AMDGPU_TARGETS}")
         if(TMPAMDGPU_TARGETS STREQUAL "all" )
